@@ -110,11 +110,14 @@ for page in s:
         for image in images:
             print(image)
             im = yoururlimg(image)
-            f = open("image.jpg", "wb")
+            f = open("img-(" +str(i) +").jpg", "wb")
             f.write(im)
             f.close()
+
             im2 = iio.imread("image.jpg")
-            im2.resize((1920, 1080, 3))
-            writer.append_data(im2[:, :, 1])
+            #im2.resize((1920, 1080, 3))
+            #writer.append_data(im2[:, :, 1])
+            
         writer.close()
+        
         i = i + 1

@@ -81,7 +81,7 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
                     print(f"Found: {len(image_urls)} image links, done!")
                 else:
                     print("Found:", len(image_urls), "image links, looking for more ...")
-                    time.sleep(1)
+                    time.sleep(0.1)
                     # load_more_button = wd.find_element_by_css_selector(".mye4qd")
                     # if load_more_button:
                     #    wd.execute_script("document.querySelector('.mye4qd').click();")
@@ -96,9 +96,9 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 
 for page in s:
     i = 0
-    count, images = fetch_image_urls(page, 10000, 2)
+    count, images = fetch_image_urls(page, 1000, 2)
     if count > 24:
-        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=10)
+        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=2)
         for image in images:
             im = iio.imread(image)
             writer.append_data(im[:, :, 1])

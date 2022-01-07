@@ -11,24 +11,31 @@ import webdriver_setup
 import time
 import imageio as iio
 
-s = ["http://empty3.one/galerie/", "http://google.com"]
+q = "pussy"
+s = ["http://empty3.one/galerie/",
+     "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q=" + q + "&oq={q}&gs_l=img"]
 data = []
-data1= []
-for pg in s:
-    # query the website and return the html to the variable 'page'
-    page = urllib.request.urlopen(pg)
-    try:
-        search_response = urllib.request.urlopen(pg)
-    except urllib.request.HTTPError:
-        pass
-    # parse the html using beautiful soap and store in variable `soup`
-    soup = BeautifulSoup(page, 'html.parser')
-    # Take out the <div> of name and get its value
-    ls = [x.get_text(strip=True) for x in soup.find_all("h2", {"class": "f18"})]
-    ls1=  [x.get_text(strip=True) for x in soup.find_all("span", {"class": "date"})]
-    # save the data in tuple
-    data.append((ls))
-    data1.append(ls1)
+data1 = []
+
+
+# for pg in s:
+#     # query the website and return the html to the variable 'page'
+#     print(pg)
+#
+#     page = urllib.request.urlopen(pg)
+#     try:
+#         search_response = urllib.request.urlopen(pg)
+#     except urllib.request.HTTPError:
+#         pass
+#     # parse the html using beautiful soap and store in variable `soup`
+#     soup = BeautifulSoup(page, 'html.parser')
+#     # Take out the <div> of name and get its value
+#     ls = [x.get_text(strip=True) for x in soup.find_all("h2", {"class": "f18"})]
+#     ls1 = [x.get_text(strip=True) for x in soup.find_all("span", {"class": "date"})]
+#     # save the data in tuple
+#     data.append((ls))
+#     data1.append(ls1)
+
 
 def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 1):
     wd = webdriver_setup.get_webdriver
@@ -38,12 +45,10 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         time.sleep(sleep_between_interactions)
 
         # build the google query
-    q = "pussy"
-    search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q="+q+"&oq={q}&gs_l=img"
 
     # load the page
     wd = wd.FirefoxDriver.create_driver("")
-    wd.get(search_url)
+    wd.get(query)
 
     image_urls = set()
     image_count = 0
@@ -78,7 +83,7 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
                 break
         else:
             print("Found:", len(image_urls), "image links, looking for more ...")
-            time.sleep(30)
+            time.sleep(0.30)
             return
             load_more_button = wd.find_element_by_css_selector(".mye4qd")
             if load_more_button:
@@ -87,14 +92,16 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         # move the result startpoint further down
         results_start = len(thumbnail_results)
 
-    return image_urls
+    return image_count, image_urls
 
 
 for page in s:
-    images = fetch_image_urls(page, 10000, 2)
-    writer = iio.get_writer("out-" + i + ".mp4", fps=10)
-    for image in images:
-        im = iio.imread(image)
-        writer.append_data(im[:, :, 1])
-    writer.close()
-    i = i+1
+    i = 0
+    count, images = fetch_image_urls(page, 10000, 2)
+    if count > 24:
+        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=10)
+        for image in images:
+            im = iio.imread(image)
+            writer.append_data(im[:, :, 1])
+        writer.close()
+        i = i + 1

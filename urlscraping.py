@@ -1,4 +1,6 @@
 import csv
+import os
+
 from urlopen import urllib
 from urllib.request import urlopen, HTTPError
 from datetime import datetime, timedelta
@@ -7,7 +9,7 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import webdriver_setup
 import time
-
+import imageio as iio
 
 s = ["http://empty3.one/galerie/", "http://google.com"]
 data = []
@@ -36,8 +38,8 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         time.sleep(sleep_between_interactions)
 
         # build the google query
-
-    search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q={q}&oq={q}&gs_l=img"
+    q = "pussy"
+    search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q="+q+"&oq={q}&gs_l=img"
 
     # load the page
     wd = wd.FirefoxDriver.create_driver("")
@@ -89,4 +91,10 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 
 
 for page in s:
-    print(fetch_image_urls(page, 10000, 2))
+    images = fetch_image_urls(page, 10000, 2)
+    writer = iio.get_writer("out-" + i + ".mp4", fps=10)
+    for image in images:
+        im = iio.imread(image)
+        writer.append_data(im[:, :, 1])
+    writer.close()
+    i = i+1

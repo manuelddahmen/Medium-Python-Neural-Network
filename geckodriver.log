@@ -1,0 +1,24 @@
+1641568102865	geckodriver	INFO	Listening on 127.0.0.1:56862
+1641568105905	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56863" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileE7nqsK"
+1641568106649	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileE7nqsK\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56863/devtools/browser/8fcfd4d2-05f4-4acd-ad05-c64fd05e0d7b
+1641568110156	Marionette	INFO	Listening on port 56874
+1641568110249	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641568235398	geckodriver	INFO	Listening on 127.0.0.1:57270
+1641568238422	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57271" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile0SnIFn"
+1641568238834	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile0SnIFn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57271/devtools/browser/e698834f-e00b-4a89-9361-0834f26c2771
+1641568241687	Marionette	INFO	Listening on port 57280
+1641568242104	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641568252832	Marionette	INFO	Stopped listening on port 57280
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+!!! error running onStopped callback: TypeError: callback is not a function
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

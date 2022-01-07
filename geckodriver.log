@@ -938,3 +938,12 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:64723/devtools/browser/0b3b5bbd-42b7-495a-9fb7-f27c2ebbbb52
 1641592636823	Marionette	INFO	Listening on port 64833
 1641592637195	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript warning: https://pagead2.googlesyndication.com/bg/5j4VCALLZSHxCC9Q4npotRbCr-J4MtXOxr4dICczkIM.js line 1 > eval line 2825 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1641593008449	geckodriver	INFO	Listening on 127.0.0.1:49782
+1641593011475	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49783" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileJnr06l"
+1641593011859	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileJnr06l\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:49783/devtools/browser/961cc348-7e0a-489e-a64d-07b40b36babd
+1641593014454	Marionette	INFO	Listening on port 49796
+1641593014653	RemoteAgent	WARN	TLS certificate errors will be ignored for this session

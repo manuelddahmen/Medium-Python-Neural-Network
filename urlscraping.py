@@ -104,7 +104,7 @@ def yoururlimg(yourUrl):
 
 for page in s:
     i = 0
-    count, images = fetch_image_urls(page, 10)
+    count, images = fetch_image_urls(page, 100)
     if count > 24:
         writer = iio.get_writer("out-" + str(i) + ".mp4", fps=25)
         for image in images:
@@ -114,7 +114,7 @@ for page in s:
             f.write(im)
             f.close()
             im2 = iio.imread("image.jpg")
-            im3 = np.resize(im2, 1920, 1080)
+            im2.resize((1920, 1080, 3))
             writer.append_data(im2[:, :, 1])
         writer.close()
         i = i + 1

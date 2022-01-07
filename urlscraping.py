@@ -12,8 +12,8 @@ import time
 import imageio as iio
 
 q = "pussy"
-s = ["http://empty3.one/galerie/",
-     "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q=" + q + "&oq={q}&gs_l=img"]
+s = ["https://empty3.one/galerie/",
+     "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q=" + q + "&oq="+q+"&gs_l=img"]
 data = []
 data1 = []
 

@@ -10,10 +10,11 @@ from bs4 import BeautifulSoup
 import webdriver_setup
 import time
 import imageio as iio
+import numpy as np
 
-q = "pussy"
-s = ["https://empty3.one/galerie/",
-     "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q=" + q + "&oq="+q+"&gs_l=img"]
+q = "car"
+s = [  # "https://empty3.one/galerie/",
+    f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
@@ -37,7 +38,7 @@ data1 = []
 #     data1.append(ls1)
 
 
-def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 1):
+def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 0.1):
     wd = webdriver_setup.get_webdriver
 
     def scroll_to_end(wd):
@@ -74,7 +75,6 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
                 for actual_image in actual_images:
                     if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src'):
                         image_urls.add(actual_image.get_attribute('src'))
-
                 image_count = len(image_urls)
 
                 if len(image_urls) >= max_links_to_fetch:
@@ -94,13 +94,22 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
     return image_count, image_urls
 
 
+def yoururlimg(yourUrl):
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
+    req = urllib.request.Request(yourUrl, headers=headers)
+    img = urllib.request.urlopen(req)
+    return img
+
+
 for page in s:
     i = 0
-    count, images = fetch_image_urls(page, 1000, 2)
+    count, images = fetch_image_urls(page, 100)
     if count > 24:
         writer = iio.get_writer("out-" + str(i) + ".mp4", fps=2)
         for image in images:
-            im = iio.imread(image)
-            writer.append_data(im[:, :, 1])
+            print(image)
+            im = yoururlimg(image)
+            im2 = np.resize(im, 1920, 1080)
+            writer.append_data(im2[:, :, 1])
         writer.close()
         i = i + 1

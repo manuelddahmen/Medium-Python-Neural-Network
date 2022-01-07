@@ -43,4 +43,13 @@ License:
   [Creative Commons Attribution-Share Alike 3.0 license.](
   https://creativecommons.org/licenses/by-sa/3.0/)
 """
+import os
 
+
+def folder_browse(top):
+        for root, dirs, files in os.walk(top):
+            print(root, "consumes", end=" ")
+            print(sum(getsize(join(root, name)) for name in files), end=" ")
+            print("bytes in", len(files), "non-directory files")
+            if 'settings.xml' in dirs:
+                exec "mvn ../IdeaProjects/features/ "

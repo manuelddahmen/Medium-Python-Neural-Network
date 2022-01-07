@@ -1,0 +1,89 @@
+import csv
+from urlopen import urllib
+from urllib.request import urlopen, HTTPError
+from datetime import datetime, timedelta
+import requests
+import pandas as pd
+from bs4 import BeautifulSoup
+import webdriver_setup
+s = ["http://empty3.one/galerie/", "http://google.com"]
+data = []
+data1= []
+for pg in s:
+    # query the website and return the html to the variable 'page'
+    page = urllib.request.urlopen(pg)
+    try:
+        search_response = urllib.request.urlopen(pg)
+    except urllib.request.HTTPError:
+        pass
+    # parse the html using beautiful soap and store in variable `soup`
+    soup = BeautifulSoup(page, 'html.parser')
+    # Take out the <div> of name and get its value
+    ls = [x.get_text(strip=True) for x in soup.find_all("h2", {"class": "f18"})]
+    ls1=  [x.get_text(strip=True) for x in soup.find_all("span", {"class": "date"})]
+    # save the data in tuple
+    data.append((ls))
+    data1.append(ls1)
+
+def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 1):
+    wd = webdriver_setup.get_webdriver
+
+    def scroll_to_end(wd):
+        wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(sleep_between_interactions)
+
+        # build the google query
+
+    search_url = "https://www.google.com/search?safe=off&site=&tbm=isch&source=hp&q={q}&oq={q}&gs_l=img"
+
+    # load the page
+    wd = wd.FirefoxDriver.create_driver("")
+    wd.get(search_url)
+
+    image_urls = set()
+    image_count = 0
+    results_start = 0
+    while image_count < max_links_to_fetch:
+        scroll_to_end(wd)
+
+        # get all image thumbnail results
+        thumbnail_results = wd.find_elements_by_css_selector("img.Q4LuWd")
+        number_results = len(thumbnail_results)
+
+        print(f"Found: {number_results} search results. Extracting links from {results_start}:{number_results}")
+
+        for img in thumbnail_results[results_start:number_results]:
+            # try to click every thumbnail such that we can get the real image behind it
+            try:
+                img.click()
+                time.sleep(sleep_between_interactions)
+            except Exception:
+                continue
+
+            # extract image urls
+            actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
+            for actual_image in actual_images:
+                if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src'):
+                    image_urls.add(actual_image.get_attribute('src'))
+
+            image_count = len(image_urls)
+
+            if len(image_urls) >= max_links_to_fetch:
+                print(f"Found: {len(image_urls)} image links, done!")
+                break
+        else:
+            print("Found:", len(image_urls), "image links, looking for more ...")
+            time.sleep(30)
+            return
+            load_more_button = wd.find_element_by_css_selector(".mye4qd")
+            if load_more_button:
+                wd.execute_script("document.querySelector('.mye4qd').click();")
+
+        # move the result startpoint further down
+        results_start = len(thumbnail_results)
+
+    return image_urls
+
+
+for page in s:
+    print(fetch_image_urls(page, 10000, "get"))

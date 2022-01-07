@@ -6,6 +6,9 @@ import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import webdriver_setup
+import time
+
+
 s = ["http://empty3.one/galerie/", "http://google.com"]
 data = []
 data1= []
@@ -86,4 +89,4 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 
 
 for page in s:
-    print(fetch_image_urls(page, 10000, "get"))
+    print(fetch_image_urls(page, 10000, 2))

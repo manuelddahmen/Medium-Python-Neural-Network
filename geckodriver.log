@@ -110,14 +110,16 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:65105/devtools/browser/a541e8db-3b47-4faa-9c56-18169d4a6f8e
 1641578933388	Marionette	INFO	Listening on port 65116
 1641578933618	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1641578990684	geckodriver	INFO	Listening on 127.0.0.1:65349
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:65349
 1641578993770	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "65350" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilenvfsCB"
 1641578999385	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilenvfsCB\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:65350/devtools/browser/747ce2d4-30ac-41ad-a98a-06c992095fed
 1641579002230	Marionette	INFO	Listening on port 65364
 1641579002308	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1641579069257	geckodriver	INFO	Listening on 127.0.0.1:49785
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:49785
 1641579072291	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49786" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileOnkKlr"
 1641579072661	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileOnkKlr\\search.json.mozlz4", (void 0)))
@@ -216,3 +218,90 @@ JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch res
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 1641579241439	geckodriver	INFO	Listening on 127.0.0.1:56013
+1641579244526	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "56014" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileu77mOn"
+1641579245097	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileu77mOn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:56014/devtools/browser/d3c806bb-6a07-486b-84e3-3bde2881626d
+1641579248183	Marionette	INFO	Listening on port 56025
+1641579248206	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ExpectFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+IPDL protocol error: Handler returned error code!
+
+###!!! [Parent][DispatchAsyncMessage] Error: PClientManager::Msg_ForgetFutureClientSource Processing error: message was deserialized, but the handler returned false (indicating failure)
+
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1:57735
+1641579883443	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "57736" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile0kxdjN"
+1641579883845	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile0kxdjN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57736/devtools/browser/dec1d181-55dc-41ee-a588-e14ac8c4b70f
+1641579886869	Marionette	INFO	Listening on port 57746
+1641579887121	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641580138071	geckodriver	INFO	Listening on 127.0.0.1:58525
+1641580141091	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "58526" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilewB289y"
+1641580141540	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilewB289y\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:58526/devtools/browser/22ea0ce5-0c39-470b-807e-d09f61b07ab7
+1641580144138	Marionette	INFO	Listening on port 58536
+1641580144319	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641580370595	geckodriver	INFO	Listening on 127.0.0.1:59078
+1641580373616	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59079" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile83fLHI"
+1641580373972	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile83fLHI\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:59079/devtools/browser/c5e79344-d81e-4d3a-a004-22785f2abf8b
+1641580376432	Marionette	INFO	Listening on port 59089
+1641580376789	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641580383803	geckodriver	INFO	Listening on 127.0.0.1:59168
+1641580386830	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "59169" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileNCw3xc"
+1641580387177	Marionette	INFO	Marionette enabled

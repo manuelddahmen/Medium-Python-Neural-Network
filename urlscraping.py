@@ -137,14 +137,15 @@ for page in s:
 
             img3 = iio.imopen(filename, "r")
             img3 = resize(img3, (1920, 1080, 3))
+            iio.imwrite(filename, img3)
             try:
                 img3 = iio.imread(filename)
-
                 for r in range(25):
                     writer.append_data(img3[:, :, 1])
-                i = i + 1
                 # im2.close()
             except ValueError:
                 print("Error reading stored file")
+            i = i + 1
+
         writer.close()
         print("Errors: " + str(err))

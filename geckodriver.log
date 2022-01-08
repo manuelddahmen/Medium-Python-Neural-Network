@@ -827,8 +827,8 @@ JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Cou
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
-RROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
-[Parent 27068, IPC I/O Parent] WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+ WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
 4", (void 0)))
 DevTools listening on ws://localhost:54292/devtools/browser/e9f1328e-3ddc-4a03-9f08-6e68f9e226d4
 1641589075535	Marionette	INFO	Listening on port 54302

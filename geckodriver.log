@@ -822,8 +822,8 @@ DevTools listening on ws://localhost:52394/devtools/browser/429ed461-59fa-4144-b
 1641588357664	Marionette	INFO	Listening on port 52403
 1641588358232	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-1:54017
-1641588990863	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54018" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile9mHHCa"
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+\AppData\\Local\\Temp\\rust_mozprofile9mHHCa"
 1641588991214	Marionette	INFO	Marionette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile9mHHCa\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:54018/devtools/browser/ce2b67ae-b4cc-4dd6-ad6a-1fb99b5bd8be
@@ -924,26 +924,190 @@ console.warn: SearchSettings: "get: No settings file exists, new profile?" (new 
 DevTools listening on ws://localhost:63302/devtools/browser/327399df-2f77-40e0-967c-c3eed30bd440
 1641592286377	Marionette	INFO	Listening on port 63313
 1641592286632	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1641592460292	geckodriver	INFO	Listening on 127.0.0.1:63954
-1641592463303	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63955" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilefoxXkQ"
-1641592463625	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilefoxXkQ\\search.json.mozlz4", (void 0)))
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1641635192520	Marionette	INFO	Stopped listening on port 63313
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+gs: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilefoxXkQ\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:63955/devtools/browser/39d79425-fd48-4817-8bf4-c5f5c30fdbff
 1641592466187	Marionette	INFO	Listening on port 63965
 1641592466629	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1641592631002	geckodriver	INFO	Listening on 127.0.0.1:64722
-1641592634020	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64723" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile2izIEd"
-1641592634357	Marionette	INFO	Marionette enabled
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1641635191315	Marionette	INFO	Stopped listening on port 63965
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+nette enabled
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile2izIEd\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://localhost:64723/devtools/browser/0b3b5bbd-42b7-495a-9fb7-f27c2ebbbb52
 1641592636823	Marionette	INFO	Listening on port 64833
 1641592637195	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
 JavaScript warning: https://pagead2.googlesyndication.com/bg/5j4VCALLZSHxCC9Q4npotRbCr-J4MtXOxr4dICczkIM.js line 1 > eval line 2825 > eval line 1 > eval, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
-1641593008449	geckodriver	INFO	Listening on 127.0.0.1:49782
-1641593011475	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "49783" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileJnr06l"
-1641593011859	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileJnr06l\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:49783/devtools/browser/961cc348-7e0a-489e-a64d-07b40b36babd
-1641593014454	Marionette	INFO	Listening on port 49796
-1641593014653	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+JavaScript error: , line 0: TypeError: NetworkError when attempting to fetch resource.
+1641635187178	Marionette	INFO	Stopped listening on port 64833
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript warning: https://cdn.js7k.com/rq/iv/inside.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://cdn.js7k.com/rq/iv/inside-20.js, line 1: WEBGL_debug_renderer_i
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39014F,name=PContent::Reply_DiscardBrowsingContext) Closed channel: cannot send/recv
+
+
+###!!! [Parent][MessageChannel] Error: (msgtype=0x39007A,name=PContent::Msg_DestroyBrowsingContextGroup) Closed channel: cannot send/recv
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1641635305744	geckodriver	INFO	Listening on 127.0.0.1:54209
+1641635309048	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54210" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileWsmLXa"
+1641635310194	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileWsmLXa\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54210/devtools/browser/fd5bd423-62d6-45f0-a215-a52018163d35
+1641635318622	Marionette	INFO	Listening on port 54220
+1641635318777	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641635579628	Marionette	INFO	Stopped listening on port 54220
+1635438145	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "54733" "-no-remote" "-profile" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile1P5Orj"
+1641635438894	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile1P5Orj\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:54733/devtools/browser/3eb10c26-c22f-4aee-9085-5db68edeb51c
+1641635444291	Marionette	INFO	Listening on port 54742
+1641635444806	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641635574624	Marionette	INFO	Stopped listening on port 54742
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+mozprofilehEL6al"
+1641635569097	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofilehEL6al\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55269/devtools/browser/566c8384-d43d-43ac-a83a-2f545453b787
+1641635571807	Marionette	INFO	Listening on port 55279
+1641635571968	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1641637418816	Marionette	INFO	Stopped listening on port 55279
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+e" "C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileXWSh4y"
+1641635701228	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofileXWSh4y\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:55771/devtools/browser/64828b33-e609-4791-8403-2e8abd9ebc91
+1641635705428	Marionette	INFO	Listening on port 55781
+1641635705463	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1641636177840	Marionette	INFO	Stopped listening on port 55781
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.

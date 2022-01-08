@@ -1,6 +1,7 @@
 import csv
 import os
 
+from numpy import resize
 from urlopen import urllib
 from urllib.request import urlopen, HTTPError
 from datetime import datetime, timedelta
@@ -12,9 +13,9 @@ import time
 import imageio as iio
 import numpy as np
 
-q = "car"
+q = "pussy"
 s = [  # "https://empty3.one/galerie/",
-    f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
+    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
@@ -38,9 +39,7 @@ data1 = []
 #     data1.append(ls1)
 
 
-def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 0.1):
-    wd = webdriver_setup.get_webdriver
-
+def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interactions: int = 2):
     def scroll_to_end(wd):
         wd.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(sleep_between_interactions)
@@ -48,7 +47,8 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         # build the google query
 
     # load the page
-    wd = wd.FirefoxDriver.create_driver("")
+    wd = webdriver_setup.get_webdriver
+    wd = wd.ChromeDriver.create_driver("")
     wd.get(query)
 
     image_urls = set()
@@ -98,23 +98,33 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 def yoururlimg(yourUrl):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
     req = urllib.request.Request(yourUrl, headers=headers)
-    img = urllib.request.urlopen(req).read()
-    return img
+    try:
+        img = urllib.request.urlopen(req).read()
+        return img
+    finally:
+        return
 
 
 for page in s:
+    err = 0
     i = 0
     count, images = fetch_image_urls(page, 100)
     if count > 24:
-        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=25)
+        writer = iio.get_writer("out-" + str(i) + ".mp4", "mp4", fps=25)
         for image in images:
             print(image)
             im = yoururlimg(image)
-            f = open("image.jpg", "wb")
+            if im is None:
+                err = err + 1
+                i = i + 1
+                continue
+            f = open("imagesDownloads/image_" + str(datetime.date(datetime.now())) + "_" + str(i) + ".jpg", "wb")
             f.write(im)
             f.close()
             im2 = iio.imread("image.jpg")
-            im2.resize((1920, 1080, 3))
-            writer.append_data(im2[:, :, 1])
+            # img3 = resize(im2, (30,60, 3))
+            # writer.append_data(img3[:, :, 1])
+            i = i + 1
+
         writer.close()
-        i = i + 1
+        print("Errors: " + str(err))

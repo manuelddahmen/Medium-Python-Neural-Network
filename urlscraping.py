@@ -105,7 +105,7 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
     return len(image_urls), image_urls
 
 
-def yoururlimg(yourUrl):
+def yourUrlImg(yourUrl):
     img = None
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
     # req = urllib.request.Request(yourUrl, headers=headers, method="GET")
@@ -121,20 +121,22 @@ def yoururlimg(yourUrl):
 
 dateNow = str(datetime.date(datetime.now()))
 
-for page in s:
+
+def page(page):
     err = 0
     i = 0
-    count, images = fetch_image_urls(page, 100, 2)
+    count, images = fetch_image_urls(page, 500, 2)
     if count > 0:
         writer = iio.get_writer("out-" + str(i) + ".mp4", fps=2)
         for image in images:
             print(image)
-            im = yoururlimg(image)
+            im = yourUrlImg(image)
             if im is None:
                 print("Can't get data for image: " + image)
                 err = err + 1
                 i = i + 1
                 continue
+            # os.mkdir(dateNow)
             filename = "imagesDownloads/image_" + dateNow + "_" + str(i) + ".jpg"
             f = open(filename, "wb")
             f.write(im)
@@ -144,7 +146,7 @@ for page in s:
             image = Image.open(filename).convert('RGB')
             print(image.size)
 
-            resized_image = image.resize((1000, 1000))
+            resized_image = image.resize((1920, 1080))
             print(resized_image.size)
 
             resized_image.save(filename)
@@ -152,10 +154,15 @@ for page in s:
             try:
                 img3 = iio.imread(filename)
                 for r in range(25):
-                    writer.append_data(img3[:, :, 1])
+                    writer.append_data(img3)
+                    # 1 -> 3 ?
             except ValueError:
                 print("Error reading stored file")
             i = i + 1
 
         writer.close()
         print("Errors: " + str(err))
+
+
+for p in s:
+    page(p)

@@ -14,6 +14,10 @@ import time
 import imageio as iio
 import numpy as np
 import ssl
+from PIL import Image
+import os
+import PIL
+import glob
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
@@ -135,14 +139,18 @@ for page in s:
             f.close()
             print(filename)
 
-            img3 = iio.imopen(filename, "r")
-            img3 = resize(img3, (1920, 1080, 3))
-            iio.imwrite(filename, img3)
+            image = Image.open(filename)
+            print(image.size)
+
+            resized_image = image.resize((1000, 1000))
+            print(resized_image.size)
+
+            image.close()
+            
             try:
                 img3 = iio.imread(filename)
                 for r in range(25):
                     writer.append_data(img3[:, :, 1])
-                # im2.close()
             except ValueError:
                 print("Error reading stored file")
             i = i + 1

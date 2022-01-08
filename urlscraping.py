@@ -102,11 +102,11 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 
 def yoururlimg(yourUrl):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
-    req = urllib.request.Request(yourUrl, headers=headers, method="GET")
+    # req = urllib.request.Request(yourUrl, headers=headers, method="GET")
     try:
         context = ssl.create_default_context(cafile=certifi.where())
-        context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
-        img = urllib.request.urlopen(req, cafile=certifi.where(), context=context).read()
+        # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+        img = urllib.request.urlopen(yourUrl, context=context).read()
         return img
     finally:
         return

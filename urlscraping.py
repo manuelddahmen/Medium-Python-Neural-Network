@@ -108,7 +108,7 @@ def yoururlimg(yourUrl):
 for page in s:
     err = 0
     i = 0
-    count, images = fetch_image_urls(page, 100)
+    count, images = fetch_image_urls(page, 10, 2)
     if count > 24:
         writer = iio.get_writer("out-" + str(i) + ".mp4", "mp4", fps=25)
         for image in images:
@@ -118,13 +118,18 @@ for page in s:
                 err = err + 1
                 i = i + 1
                 continue
-            f = open("imagesDownloads/image_" + str(datetime.date(datetime.now())) + "_" + str(i) + ".jpg", "wb")
+            filename = "imagesDownloads/image_" + str(datetime.date(datetime.now())) + "_" + str(i) + ".jpg"
+            f = open(filename, "wb")
             f.write(im)
             f.close()
-            im2 = iio.imread("image.jpg")
+            print(filename)
+
+            im2 = iio.imread(filename)
+
             # img3 = resize(im2, (30,60, 3))
             # writer.append_data(img3[:, :, 1])
             i = i + 1
+            im2.close()
 
         writer.close()
         print("Errors: " + str(err))

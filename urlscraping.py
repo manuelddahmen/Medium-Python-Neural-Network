@@ -115,25 +115,24 @@ for page in s:
         writer = iio.get_writer("out-" + str(i) + ".mp4", "mp4", fps=25)
         for image in images:
             print(image)
-            # im = yoururlimg(image)
-            # if im is None:
-            #    print("Can't get data for image:" + image)
-            #    err = err + 1
-            #    i = i + 1
-            #    continue
-            # filename = "imagesDownloads/image_" + str(datetime.date(datetime.now())) + "_" + str(i) + ".jpg"
-            # f = open(filename, "wb")
-            # f.write(im)
-            # f.close()
-            # print(filename)
-            # im2 = iio.imread(filename)
+            im = yoururlimg(image)
+            if im is None:
+                print("Can't get data for image:" + image)
+                err = err + 1
+                i = i + 1
+                continue
+            filename = "imagesDownloads/image_" + str(datetime.date(datetime.now())) + "_" + str(i) + ".jpg"
+            f = open(filename, "wb")
+            f.write(im)
+            f.close()
+            print(filename)
 
-            im2 = iio.imread(image)
+            im2 = iio.imread(filename)
 
             # img3 = resize(im2, (30,60, 3))
             # writer.append_data(img3[:, :, 1])
             i = i + 1
-            # im2.close()
+            im2.close()
 
         writer.close()
         print("Errors: " + str(err))

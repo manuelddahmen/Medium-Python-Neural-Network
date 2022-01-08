@@ -13,9 +13,9 @@ import time
 import imageio as iio
 import numpy as np
 
-q = "pussy"
+q = "car"
 s = [  # "https://empty3.one/galerie/",
-    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
+    f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
@@ -73,13 +73,15 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
                 # extract image urls
                 actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
                 for actual_image in actual_images:
-                    if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src'):
+                    if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src') \
+                            and len(actual_images) < max_links_to_fetch:
                         image_urls.add(actual_image.get_attribute('src'))
                         # image_urls.add(actual_image.get_attribute(''))
                 image_count = len(image_urls)
 
                 if len(image_urls) >= max_links_to_fetch:
                     print(f"Found: {len(image_urls)} image links, done!")
+                    return image_count, image_urls
                 else:
                     print("Found:", len(image_urls), "image links, looking for more ...")
                     time.sleep(0.1)
@@ -92,14 +94,14 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         else:
             return image_count, image_urls
 
-    return image_count, image_urls
+    return len(image_urls), image_urls
 
 
 def yoururlimg(yourUrl):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
-    req = urllib.request.Request(yourUrl, headers=headers)
+    req = urllib.request.Request(yourUrl, headers=headers, method="GET")
     try:
-        img = urllib.request.urlopen(req).read()
+        img = urllib.request.urlopen(req).get()
         return img
     finally:
         return
@@ -109,12 +111,13 @@ for page in s:
     err = 0
     i = 0
     count, images = fetch_image_urls(page, 10, 2)
-    if count > 24:
+    if count > 0:
         writer = iio.get_writer("out-" + str(i) + ".mp4", "mp4", fps=25)
         for image in images:
             print(image)
             im = yoururlimg(image)
             if im is None:
+                print("Can't get data for image:" + image)
                 err = err + 1
                 i = i + 1
                 continue

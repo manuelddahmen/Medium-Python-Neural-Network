@@ -823,10 +823,9 @@ DevTools listening on ws://localhost:52394/devtools/browser/429ed461-59fa-4144-b
 1641588358232	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
-\AppData\\Local\\Temp\\rust_mozprofile9mHHCa"
-1641588991214	Marionette	INFO	Marionette enabled
-console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\manue\\AppData\\Local\\Temp\\rust_mozprofile9mHHCa\\search.json.mozlz4", (void 0)))
-DevTools listening on ws://localhost:54018/devtools/browser/ce2b67ae-b4cc-4dd6-ad6a-1fb99b5bd8be
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+d8be
 1641588993989	Marionette	INFO	Listening on port 54030
 1641588994078	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 1641589147436	Marionette	INFO	Stopped listening on port 54030

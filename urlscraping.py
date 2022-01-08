@@ -21,7 +21,7 @@ import glob
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
-q = "car"
+q = "opel+cascada"
 s = [  # "https://empty3.one/galerie/",
     f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
@@ -124,7 +124,7 @@ dateNow = str(datetime.date(datetime.now()))
 for page in s:
     err = 0
     i = 0
-    count, images = fetch_image_urls(page, 20, 2)
+    count, images = fetch_image_urls(page, 100, 2)
     if count > 0:
         writer = iio.get_writer("out-" + str(i) + ".mp4", fps=2)
         for image in images:

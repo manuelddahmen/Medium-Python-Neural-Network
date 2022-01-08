@@ -1,6 +1,6 @@
 import csv
 import os
-
+import certifi
 from numpy import resize
 from urlopen import urllib
 from urllib.request import urlopen, HTTPError
@@ -12,7 +12,10 @@ import webdriver_setup
 import time
 import imageio as iio
 import numpy as np
+import ssl
 
+ssl._create_default_https_context = ssl._create_unverified_context
+ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
 q = "car"
 s = [  # "https://empty3.one/galerie/",
     f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
@@ -101,7 +104,9 @@ def yoururlimg(yourUrl):
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
     req = urllib.request.Request(yourUrl, headers=headers, method="GET")
     try:
-        img = urllib.request.urlopen(req).get()
+        context = ssl.create_default_context(cafile=certifi.where())
+        context = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+        img = urllib.request.urlopen(req, cafile=certifi.where(), context=context).read()
         return img
     finally:
         return
@@ -117,7 +122,7 @@ for page in s:
             print(image)
             im = yoururlimg(image)
             if im is None:
-                print("Can't get data for image:" + image)
+                print("Can't get data for image: " + image)
                 err = err + 1
                 i = i + 1
                 continue

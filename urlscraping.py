@@ -133,7 +133,7 @@ for page in s:
             # img3 = resize(im2, (30,60, 3))
             # writer.append_data(img3[:, :, 1])
             i = i + 1
-            im2.close()
+            # im2.close()
 
         writer.close()
         print("Errors: " + str(err))

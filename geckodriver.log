@@ -828,12 +828,9 @@ JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Cou
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
 JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
- WARNING: file /builds/worker/checkouts/gecko/ipc/chromium/src/base/process_util_win.cc:167
-4", (void 0)))
-DevTools listening on ws://localhost:54292/devtools/browser/e9f1328e-3ddc-4a03-9f08-6e68f9e226d4
-1641589075535	Marionette	INFO	Listening on port 54302
-1641589076021	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
-1641589148431	Marionette	INFO	Stopped listening on port 54302
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+JavaScript error: resource://gre/modules/PromiseWorker.jsm, line 106: Error: Could not get children of file(C:\Users\manue\AppData\Local\Temp\rust_mozprofileYl9UNd\thumbnails) because it does not exist
+54302
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
 JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
 

@@ -141,14 +141,14 @@ for page in s:
             f.close()
             print(filename)
 
-            image = Image.open(filename)
+            image = Image.open(filename).convert('RGB')
             print(image.size)
 
             resized_image = image.resize((1000, 1000))
             print(resized_image.size)
 
-            image.save(filename)
-            image.close()
+            resized_image.save(filename)
+
             try:
                 img3 = iio.imread(filename)
                 for r in range(25):

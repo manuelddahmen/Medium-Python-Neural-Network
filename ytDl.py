@@ -4,17 +4,32 @@ import os
 from youtube_search import YoutubeSearch
 import json
 
-results = YoutubeSearch('daft punk', max_results=20).to_json()
-
 # returns a dictionary
 ydl_opts = {}
 os.chdir('C:/Users/manue/Music/New')
 
-json = json.loads(results)
 
-with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+def search_and_download(search_string, num_of_items, audio_bool=True):
+    options = {}
+    if audio_bool:
+        options = {
+            'format': 'bestaudio/best',
+            'keepvideo': False
+        }
+
+    results = YoutubeSearch(search_string, max_results=num_of_items).to_json()
+    json2 = json.loads(results)
     i = 0
-    for video in json['videos']:
-        print(video)
-        ydl.download(['https://www.youtube.com' + video['url_suffix']])
-        i = i + 1
+    for video in json2['videos']:
+        with youtube_dl.YoutubeDL(options) as ydl:
+            video_url = 'https://www.youtube.com' + video['url_suffix']
+            print(video_url)
+            ydl.download([video_url])
+            i = i + 1
+
+
+search = "metallica"
+items = 20
+audio = True
+if __name__ == '__main__':
+    search_and_download(search, items, audio)

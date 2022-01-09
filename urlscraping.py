@@ -21,9 +21,9 @@ import glob
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
-q = "opel+cascada"
+q = "pussy"
 s = [  # "https://empty3.one/galerie/",
-    f"http://www.google.com/search?safe=on&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
+    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
@@ -127,7 +127,7 @@ def page(page):
     i = 0
     count, images = fetch_image_urls(page, 500, 2)
     if count > 0:
-        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=2)
+        writer = iio.get_writer("out-" + str(i) + ".mp4", fps=25)
         for image in images:
             print(image)
             im = yourUrlImg(image)
@@ -166,3 +166,4 @@ def page(page):
 
 for p in s:
     page(p)
+

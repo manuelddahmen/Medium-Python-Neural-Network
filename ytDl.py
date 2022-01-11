@@ -28,8 +28,8 @@ def search_and_download(search_string, num_of_items, audio_bool=True):
             i = i + 1
 
 
-search = "metallica"
-items = 20
+search = "eminem"
+items = 30
 audio = True
 if __name__ == '__main__':
     search_and_download(search, items, audio)

@@ -21,12 +21,13 @@ import glob
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
-q = "pussy"
+q = "underwater+ocean+views"
 s = [  # "https://empty3.one/galerie/",
     f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
+directory = q
 
 # for pg in s:
 #     # query the website and return the html to the variable 'page'
@@ -122,10 +123,18 @@ def yourUrlImg(yourUrl):
 dateNow = str(datetime.date(datetime.now()))
 
 
-def page(page):
+def page(page_url):
     err = 0
     i = 0
-    count, images = fetch_image_urls(page, 500, 2)
+    try:
+        if not os.mkdir(directory):
+            print("Directory already exists. Quit")
+            return
+    except FileExistsError:
+        print("Directory already exists. Quit")
+        return
+
+    count, images = fetch_image_urls(page_url, 500, 2)
     if count > 0:
         writer = iio.get_writer("out-" + str(i) + ".mp4", fps=25)
         for image in images:
@@ -136,8 +145,7 @@ def page(page):
                 err = err + 1
                 i = i + 1
                 continue
-            # os.mkdir(dateNow)
-            filename = "imagesDownloads/image_" + dateNow + "_" + str(i) + ".jpg"
+            filename = directory + "/image_" + dateNow + "_" + str(i) + ".jpg"
             f = open(filename, "wb")
             f.write(im)
             f.close()

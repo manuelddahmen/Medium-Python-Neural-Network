@@ -21,13 +21,9 @@ import glob
 
 ssl._create_default_https_context = ssl._create_unverified_context
 ssl.SSLContext.verify_mode = ssl.VerifyMode.CERT_OPTIONAL
-q = "underwater+ocean+views"
-s = [  # "https://empty3.one/galerie/",
-    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 data = []
 data1 = []
 
-directory = q
 
 # for pg in s:
 #     # query the website and return the html to the variable 'page'
@@ -71,7 +67,8 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
         number_results = len(thumbnail_results)
 
         if number_results > 0:
-            print(f"Found: {number_results} search results. Extracting links from {results_start}:{number_results}")
+            print(f"Found: {number_results} search results. Extracting links from {results_start}:{number_results}\n"
+                  + len(image_urls))
             for img in thumbnail_results[results_start:number_results]:
                 # try to click every thumbnail such that we can get the real image behind it
                 try:
@@ -127,9 +124,7 @@ def page(page_url):
     err = 0
     i = 0
     try:
-        if not os.mkdir(directory):
-            print("Directory already exists. Quit")
-            return
+        os.mkdir(directory)
     except FileExistsError:
         print("Directory already exists. Quit")
         return
@@ -172,6 +167,11 @@ def page(page_url):
         print("Errors: " + str(err))
 
 
+count = 500
+q = "underwater+ocean+views"
+s = [  # "https://empty3.one/galerie/",
+    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
+directory = q
+
 for p in s:
     page(p)
-

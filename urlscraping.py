@@ -168,7 +168,7 @@ def page(page_url):
 
 
 count = 500
-q = "Crown-of-thorns+starfish"
+q = "pussy"
 s = [  # "https://empty3.one/galerie/",
     f"https://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 directory = q

@@ -68,7 +68,7 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
 
         if number_results > 0:
             print(f"Found: {number_results} search results. Extracting links from {results_start}:{number_results}\n"
-                  + len(image_urls))
+                  + str(len(image_urls)))
             for img in thumbnail_results[results_start:number_results]:
                 # try to click every thumbnail such that we can get the real image behind it
                 try:
@@ -168,9 +168,9 @@ def page(page_url):
 
 
 count = 500
-q = "underwater+ocean+views"
+q = "Crown-of-thorns+starfish"
 s = [  # "https://empty3.one/galerie/",
-    f"http://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
+    f"https://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
 directory = q
 
 for p in s:

@@ -105,6 +105,8 @@ colors = [(255, 255, 0), (0, 255, 0), (0, 255, 255), (255, 0, 0)]
 
 is_cuda = len(sys.argv) > 1 and sys.argv[1] == "cuda"
 
+is_cuda = True
+
 net = build_model(is_cuda)
 capture = load_capture()
 

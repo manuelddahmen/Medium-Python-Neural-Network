@@ -4,13 +4,15 @@ import imageio
 import imageio as iio
 from imageio.core import Image
 
-directory = "C:\\Users\\manue\\EmptyCanvasTest\\"
-dir = "C:\\Users\\manue\\EmptyCanvasTest\\one.empty3.testscopy.tests.test3.TestPolygons\FICHIERS_2022-04-24-09-58-52\\"  # FICHIERS_2022-04-24-09-28-11
-filesInDir = os.listdir(dir)
-writer = iio.get_writer(directory + "out-chat0" + ".mp4", fps=25)
+outputDirectory = "C:\\Users\\manue\\EmptyCanvasTest\\"
+directoryWithJpegFiles = "C:\\Users\\manue\\EmptyCanvasTest\\one.empty3.testscopy.tests.test3.TestPolygons\FICHIERS_2022-04-24-09-58-52\\"  # FICHIERS_2022-04-24-09-28-11
+outFilename = "out-chat0"
+writer = iio.get_writer(outputDirectory + "/" + outFilename + ".mp4", fps=25)
+filesInDir = os.listdir(directoryWithJpegFiles)
+fileformatStr = ".jpg"
 for image in filesInDir:
     print(image)
-    if not image.lower().endswith(".jpg"):
+    if not image.lower().endswith(fileformatStr):
         print("Can't get data for image: " + image)
         continue
     # filename = directory + "/image__" + str(i) + ".jpg"
@@ -28,7 +30,7 @@ for image in filesInDir:
     # resized_image.save(filename)
     else:
         try:
-            img3 = iio.imread(dir + image)
+            img3 = iio.imread("{0}/{1}".format(directoryWithJpegFiles, image))
             # for r in range(25):
             writer.append_data(img3)
             # 1 -> 3 ?

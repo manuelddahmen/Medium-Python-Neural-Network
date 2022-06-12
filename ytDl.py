@@ -1,7 +1,7 @@
 from __future__ import unicode_literals
 import youtube_dl
 import os
-from youtube_search import YoutubeSearch
+from youtubesearch import youtubesearch_client
 import json
 
 # returns a dictionary
@@ -16,6 +16,7 @@ def search_and_download(search_string, num_of_items, audio_bool=True):
             'format': 'bestaudio/best',
             # 'noplaylist': True,
             'continue_dl': True,
+            "channel": "Angèlevl"
             # 'postprocessors': [{
             #     'key': 'FFmpegExtractAudio',
             #     'preferredcodec': 'mp3',
@@ -47,9 +48,9 @@ def search_and_download(search_string, num_of_items, audio_bool=True):
 
 
 audio = False
-search = ["Raphael"]
+search = ["Angèle"]
 url_suffixes = []  # "?watch?v=ACMvpG5hDRw"
-items = 20
+items = 80
 if __name__ == '__main__':
     for s in search:
         search_and_download(s, items, audio)

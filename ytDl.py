@@ -15,7 +15,8 @@ def search_and_download(search_string, num_of_items, audio_bool=True):
         ydl_opts = {
             'format': 'bestaudio/best',
             # 'noplaylist': True,
-            'continue_dl': True,
+            'continue_dl': True, -+
+
             "channel": "Angèlevl"
             # 'postprocessors': [{
             #     'key': 'FFmpegExtractAudio',

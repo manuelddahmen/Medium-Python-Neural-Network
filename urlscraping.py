@@ -6,7 +6,6 @@ from numpy import resize
 from urlopen import urllib
 from urllib.request import urlopen, HTTPError
 from datetime import datetime, timedelta
-import requests
 import pandas as pd
 from bs4 import BeautifulSoup
 import webdriver_setup
@@ -77,7 +76,7 @@ def fetch_image_urls(query: str, max_links_to_fetch: int, sleep_between_interact
                 except Exception:
                     continue
                 # extract image urls
-                actual_images = wd.find_elements_by_css_selector('img.n3VNCb')
+                actual_images = wd  # .find_elements_by_css_selector('img.n3VNCb')
                 for actual_image in actual_images:
                     if actual_image.get_attribute('src') and 'http' in actual_image.get_attribute('src') \
                             and len(actual_images) < max_links_to_fetch:
@@ -127,7 +126,7 @@ def page(page_url):
         os.mkdir(directory)
     except FileExistsError:
         print("Directory already exists. Quit")
-        return
+        #return
 
     count, images = fetch_image_urls(page_url, 500, 2)
     if count > 0:
@@ -168,10 +167,10 @@ def page(page_url):
 
 
 count = 500
-q = "pussy"
+q = "portrait"
 s = [  # "https://empty3.one/galerie/",
     f"https://www.google.com/search?safe=off&source=hp&q={q}&oq={q}&tbm=isch&ijn=0"]
-directory = q
+directory = q + "1"
 
 for p in s:
     page(p)

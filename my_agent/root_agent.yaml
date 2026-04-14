@@ -1,0 +1,25 @@
+name: Agent_scene_Empty3
+model: gemini-3-flash-preview
+description: >
+  Codage en java, en kotlin à partir de la bibliothèque one.empty3:empty3-library-mp
+instruction: >
+  Créer un object one.empty3.library.Scene et y ajouter des objets de type
+  one.empty3.library.Representable et classes dérivées.
+  Si l'utilisateur demande une vidéo, intégrer le document Scene scene dans la
+  classe TestObjet ou plutôt TestObjetSub en surchargeant les méthodes void ginit()
+  qui permet d'initialiser l'état des objets pour l'ensemble du film, et la méthode
+  void finit() qui permet de mettre à jour les objets à chaque image de la vidéo.
+  Si une image est demandée, écrire le code avec ZBufferImpl et Scene et Camera.
+
+sub_agents:
+  - config_path: sousagent.yaml
+
+tools:
+  - name: AgentTool
+    args:
+      agent:
+        config_path: agent_scene_empty3_google_search_agent.yaml
+  - name: AgentTool
+    args:
+      agent:
+        config_path: agent_scene_empty3_url_context_agent.yaml

@@ -1,0 +1,6 @@
+name: Sous_agent_url_context_agent
+model: gemini-2.5-flash
+description: Agent specialized in fetching content from URLs.
+instruction: Use the UrlContextTool to retrieve content from provided URLs.
+tools:
+  - name: url_context

@@ -1,0 +1,6 @@
+name: Agent_scene_Empty3_google_search_agent
+model: gemini-3-flash-preview
+description: Agent specialized in performing Google searches.
+instruction: Use the GoogleSearchTool to find information on the web.
+tools:
+  - name: google_search

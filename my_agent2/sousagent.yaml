@@ -1,0 +1,17 @@
+name: sousagent
+model: gemini-2.5-flash
+description: Run the code
+instruction: >
+  Run the TestObjet :
+  new Thread(testObjectRef).start();
+  et récupérer les images résultantes et/ou la vidéo et/ou le modèle avec
+  setGenerate(GENERATE_IMAGES, ...)
+tools:
+  - name: AgentTool
+    args:
+      agent:
+        config_path: sous_agent_google_search_agent.yaml
+  - name: AgentTool
+    args:
+      agent:
+        config_path: sous_agent_url_context_agent.yaml

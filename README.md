@@ -1,3 +1,5 @@
+This is a fork of : 
+
 # Mathematics of Neural Network
 
 This code is part of my post on **[medium](https://medium.com/@omaraflak/math-neural-network-from-scratch-in-python-d6da9f29ce65)**.
@@ -11,3 +13,8 @@ python example_xor.py
 python example_conv.py
 python example_mnist.py
 ```
+
+The fork was originally designed for Neural Network conception.
+I put some utilities tools in python that I use with my development projects.
+
+Manuel Dahmen

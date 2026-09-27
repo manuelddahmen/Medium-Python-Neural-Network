@@ -29,7 +29,7 @@ while not end:
     for i in arr:
         ret, frame = cap[i].read()
         out[i].write(frame)
-        cv2.imshow('frame', frame)
+        cv2.imshow('frame'+str(i), frame)
         # Writes frame to file frames/frame.png with current timestamp as name
         timestamp = time.time()*1000.0
         cv2.imwrite('frames/frame-'+str(i)+'-' + str(timestamp) + '.png', frame)

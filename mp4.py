@@ -1,26 +1,41 @@
+import os
+import glob
 import cv2
 import numpy as np
-import glob
 from PIL import Image
+
 img_array = []
 
-size = (1920*2, 1080*2)
 # size = (1600, 720)
 #size = (640, 480)
+size = (1920*2, 1080*2)
 
 frame = 0
 
-filename_video_output = "output\\moon3.mp4"
+filename_video_output = "output\\MoonRotation4K-1-rotate180.mp4"
+output_dir = os.path.dirname(filename_video_output)
+if output_dir:
+    os.makedirs(output_dir, exist_ok=True)
 
 # out = cv2.VideoWriter(filename_video, cv2.VideoWriter_fourcc(*'DIVX'), 50, size)
 
 print(size)
 
-filename = "D:\\Current\\EmptyCanvasTest\\one.empty3.tests.test_objet.MoonRotation4K\\2026-06-28-09-52-07\\*.png"
+filename = "D:\\Current\\EmptyCanvasTest\\one.empty3.testagentcode_jvm.MoonRotation4K\\2026-09-26-06-54-29\\"
 
 print(filename)
+
+if os.path.isdir(filename):
+    search_pattern = os.path.join(filename, "*")
+else:
+    search_pattern = filename
+
 # Using sorted() to ensure frames are encoded in alphabetical/numerical order
-file_list = sorted(glob.glob(filename))
+image_extensions = ('.png', '.jpg', '.jpeg', '.bmp', '.tiff', 'tif', '.webp')
+file_list = sorted([
+    f for f in glob.glob(search_pattern)
+    if os.path.isfile(f) and f.lower().endswith(image_extensions)
+])
 
 for filename_img in file_list:
     img = cv2.imread(filename_img)
@@ -48,7 +63,7 @@ for filename_img in file_list:
     background = Image.new('RGBA', pil_img.size, (0, 0, 0, 255))
     # Paste the original image over the black background, using its alpha channel as a mask
     background.paste(pil_img, mask=pil_img)
-
+    background = background.rotate(180)
     # I use numpy to convert the background into a numpy array
     numpy_image = np.array(background)
 
